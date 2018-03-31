@@ -3,7 +3,7 @@
 /**
  * Fired during plugin activation
  *
- * @link       http://example.com
+ * @link       https://ishopdesign.com
  * @since      1.0.0
  *
  * @package    iShopDesign
