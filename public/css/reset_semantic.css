@@ -1,0 +1,15 @@
+/**Overwrite some default setting of sematic UI**/
+#isd_app .ui.grid.isd_grid {
+  margin: 0;
+  padding: 0;
+}
+#isd_app .ui.grid.isd_grid>.row {
+  padding: 0;
+}
+#isd_app .ui.grid.isd_grid>* {
+  padding: 0;
+}
+#isd_app .ui.grid.isd_grid>.column:not(.row), .ui.grid.isd_grid>.row>.column {
+  padding-left: 0;
+  padding-right: 0;
+}

@@ -1,0 +1,302 @@
+
+#isd_text_ff_act {
+  width: 100%;
+  box-sizing: border-box;
+}
+.isd_text_ff_label {
+  float: left;
+  padding: 0 10px 0 0;
+  line-height: 24px;
+}
+.isd_text_ff_select {
+  float: right;
+  text-align: left;
+  width: 190px;
+  border: 1px solid rgba(175, 169, 169, 0.21);
+  position: relative;
+  border-radius: 5px;
+}
+.isd_text_ff_select .field.inline {
+  margin: 0;
+}
+.isd_text_ff_select .ui.radio {
+  padding: 2px 0;
+}
+.isd_text_ff_select .ui.radio label {
+  color: #fff;
+}
+.isd_text_ff_select.no-wrap-border {
+  border: none;
+}
+.isd_text_ff_select.full-width {
+  width: 100%;
+}
+.isd_tab_content_el {
+  float: left;
+  width: 100%;
+  padding: 4px 0;
+  /**border-bottom: 1px solid rgba(55, 64, 61, 0.52);**/
+}
+#isd_text_ff_act, #isd_text_fs_act {
+  line-height: 24px;
+  padding: 0 5px;
+  width: 140px;
+  box-sizing: border-box;
+  border: none;
+  margin: 0;
+}
+.isd_icon_label {
+  background: url(all_icons.png);
+  background-size: 640px;
+  width: 15px;
+  height: 20px;
+  display: inline-block;
+  float: left;
+  margin: 3px 5px 0 0px;
+}
+.isd_text_fs_unit {
+    float: right;
+}
+.isd_text_fs_unit ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.isd_text_fs_unit ul li{
+  display: inline-block;
+  padding: 0 5px;
+  cursor: pointer;
+  line-height: 24px;
+  width: 20px;
+  text-align: center;
+}
+#isd_border_control_act {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 90px;
+}
+#isd_text_ls_act {
+  float: right;
+  line-height: 24px;
+  width: 30px;
+  text-align: center;
+}
+#isd_text_op_act_slider {
+  margin: 8px;
+  cursor: pointer;
+  width: 110px;
+}
+#isd_text_op_act {
+  line-height: 40px;
+  float: right;
+  width: 29px;
+  text-align: center;
+}
+.isd_slider_unit {
+  line-height: 24px;
+  float: right;
+  width: 25%;
+  text-align: center;
+}
+#isd_text_fc_select_value{
+  width: 100%;
+  border: none;
+  padding: 0;
+  margin: 0;
+  line-height: 22px;
+}
+#isd_border_control_act .isd_icon_label{
+  background-position: -1060px -117px;
+  margin: 3px 0 0 7px;
+  position: relative;
+  z-index: 9;
+}
+#isd_border_all_icon {
+  background-position: -1060px -117px;
+}
+#isd_border_top_icon {
+left: 30px;
+}
+#isd_border_right_icon {
+  top: 30px;
+  left: 60px;
+}
+#isd_border_left_icon {
+  top: 30px;
+}
+#isd_border_bottom_icon {
+  top: 60px;
+  left: 30px;
+}
+#isd_border_top_icon .isd_icon_label {
+  background-position: -1080px -117px;
+}
+#isd_border_right_icon .isd_icon_label {
+  background-position: -1100px -117px;
+}
+#isd_border_bottom_icon .isd_icon_label {
+  background-position: -1120px -117px;
+}
+.isd_gradient_box {
+  background: linear-gradient(to right, #656565, #5f5f5f);
+  background: -webkit-linear-gradient(to right, #656565, #5f5f5f00);
+  background: -o-linear-gradient(to right, #656565, #5f5f5f);
+  background: -moz-linear-gradient(to right, #656565, #5f5f5f);
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+.isd_gradient_box.isd_act {
+  background: linear-gradient(to right, #00BCD4, #00BCD4);
+  background: -webkit-linear-gradient(to right, #00BCD4, #00BCD4);
+  background: -o-linear-gradient(to right, #00BCD4, #00BCD4);
+  background: -moz-linear-gradient(to right, #00BCD4, #00BCD4);
+}
+#isd_border_all_icon_act {
+  width: 25px;
+  height: 25px;
+  top: 30px;
+  left: 30px;
+}
+#isd_border_left_icon .isd_icon_label{
+  background-position: -1140px -117px;
+}
+#isd_line_height_icon {
+  background-position: -200px -120px;
+  width: 20px;
+}
+.isd_border_control {
+  float: left;
+  width: 100%;
+  padding: 5px;
+  /**border-bottom: 1px dashed #CCC;**/
+  box-sizing: border-box;
+}
+.isd_border_control label{
+  width: 30%;
+  line-height: 20px;
+  padding: 0;
+  border: none;
+  float: left;
+}
+#isd_text_control .isd_border_control input {
+  width: 70%;
+  box-sizing: border-box;
+  line-height: 18px;
+  text-indent: 5px;
+}
+.sd_border_control_color {
+  border: none;
+}
+#isd_border_color {
+  padding: 0;
+  margin: 0;
+  border: none;
+  line-height: 20px;
+  text-indent: 5px;
+}
+.isd_border_style {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  float: right;
+  width: 70%;
+}
+.isd_border_style_li{
+  background: linear-gradient(#656565, #5f5f5f);
+  background: -webkit-linear-gradient(#5f5f5f, #5f5f5f);
+  background: -o-linear-gradient(#656565, #5f5f5f);
+  background: -moz-linear-gradient(#656565, #5f5f5f);
+  float: left;
+  margin: 0 2px 0 0;
+  cursor: pointer;
+}
+.isd_border_style_li.isd_act {
+  background: linear-gradient(#00BCD4, #00BCD4);
+  background: -webkit-linear-gradient(#00BCD4, #00BCD4);
+  background: -o-linear-gradient(#00BCD4, #00BCD4);
+  background: -moz-linear-gradient(#00BCD4, #00BCD4);
+}
+.isd_border_style_li span{
+  display: inline-block;
+  background: url(all_icons.png) no-repeat;
+  background-position: -414px -56px;
+  width: 21px;
+  height: 20px;
+  font-size: 0;
+  background-size: 640px;
+  float: left;
+}
+.isd_border_style_solid span{
+  background-position: -198px -73px;
+}
+.isd_border_style_dashed span{
+  background-position: -218px -73px;
+}
+.isd_border_style_dotted span{
+  background-position: -237px -73px;
+}
+#isd_border_radius_control_act {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 75px;
+}
+#isd_border_radius_all_icon{
+  background-position: -520px -115px;
+  margin: 0;
+  width: 20px;
+  height: 20px;
+}
+#isd_border_radius_all_icon_act {
+  top: 22px;
+  left: 30px;
+}
+#isd_border_radius_all_icon_act .isd_icon_label {
+  background-position: -513px -114px;
+  margin: 0;
+  width: 25px;
+  height: 25px;
+}
+#isd_border_radius_top_icon {
+  top: 10px;
+  left: 0;
+}
+#isd_border_radius_top_icon .isd_icon_label {
+  background-position: -533px -114px;
+  margin: 0;
+  width: 25px;
+  height: 25px;
+}
+#isd_border_radius_right_icon {
+  top: 10px;
+  left: 60px;
+}
+#isd_border_radius_right_icon .isd_icon_label {
+  background-position: -553px -114px;
+  margin: 0;
+  width: 25px;
+  height: 25px;
+}
+#isd_border_radius_bottom_icon {
+  top: 40px;
+  left: 60px;
+}
+#isd_border_radius_bottom_icon .isd_icon_label {
+  background-position: -593px -114px;
+  margin: 0;
+  width: 25px;
+  height: 25px;
+}
+#isd_border_radius_left_icon {
+  top: 40px;
+  left: 0px;
+}
+#isd_border_radius_left_icon .isd_icon_label {
+  background-position: -573px -114px;
+  margin: 0;
+  width: 25px;
+  height: 25px;
+}
