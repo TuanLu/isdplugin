@@ -898,7 +898,7 @@ function updateApp() {
             unlink($localAppPath);
             //Remove empty Application folder
             if(file_exists($themePath . 'Applications')) {
-              rmdir($themePath . 'Applications');
+              delete_dir($themePath . 'Applications');
             }
             //Update app version to database
             if(!$appVersion) {
@@ -949,6 +949,22 @@ function unzipAppAndMerge($zipPath) {
     }
   }
   return false;
+}
+function delete_dir($src) { 
+  $dir = opendir($src);
+  while(false !== ( $file = readdir($dir)) ) { 
+      if (( $file != '.' ) && ( $file != '..' )) { 
+          if ( is_dir($src . '/' . $file) ) { 
+              delete_dir($src . '/' . $file); 
+          } 
+          else { 
+              unlink($src . '/' . $file); 
+          } 
+      } 
+  } 
+  closedir($dir); 
+  rmdir($src);
+
 }
 /**
 * Get design preview url

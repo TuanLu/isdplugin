@@ -206,6 +206,7 @@ isdBackend(document).ready(function($){
           var dataResponse = JSON.parse(data);
           if(dataResponse.status == "success") {
             $('.isd-version-info').fadeOut('slow');
+            window.location.reload();
           } else {
             alert(dataResponse.message || defaultMessage);
             console.log('error');
