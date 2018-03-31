@@ -1,5 +1,5 @@
 <?php
-const ISD_CURRENT_VERSION = "1.4.3";
+const ISD_CURRENT_VERSION = "1.4.4";
 /**
  * All header or footer design json
  **/
@@ -811,8 +811,8 @@ function getManagePageUrl(){
  * Get LiveApp Info
  * @Action
  **/
-const LIVE_APP_DOMAIN = 'https://ishopdesign.com/api/';
-const LIVE_APP_URL = 'https://ishopdesign.com/api/?action=';
+const LIVE_APP_DOMAIN = 'https://ishopdesign.com/api_plugin/';
+const LIVE_APP_URL = 'https://ishopdesign.com/api_plugin/?action=';
 function getLiveAppInfo($action, $extraRequest = '', $url = LIVE_APP_URL){
   try {
     $content = @file_get_contents($url . $action . $extraRequest);
@@ -858,25 +858,30 @@ function getLocalAppVersion() {
  * Check before update app
  */
 function checkBeforeUpdate() {
+  $response = array(
+    'status' => 'error',
+    'message' => 'The folder: wp-content/plugins/ishopdesign is not writable. Please change folder permission and click upgrade button again!', 
+  );
   //Check plugin folder or theme folder writeable or not 
-  echo getThemePath();
-  //Check zip function exists or not
-
+  $path = getPluginPath();
+  if(is_writable($path)) {
+    return true;
+  }
+  return $response;
 }
 /**
-* Get Theme Path => Get Plugin Folder
-* From 1.4.4
+* Get Plugin Dir
 **/
-function getThemePath() {
+function getPluginPath() {
   return WP_PLUGIN_DIR . '/ishopdesign/';
 }
 function updateApp() {
-  checkBeforeUpdate();
-  die;
-  $themePath = getThemePath(); 
-  $appPackage = getLiveAppInfo('app-package');
+  $isOk = checkBeforeUpdate();
+  if($isOk !== true) return false;
   try {
+    $appPackage = getLiveAppInfo('app-package');
     if($appPackage) {
+      $themePath = getPluginPath(); 
       $_temp = explode('-', $appPackage);
       $appVersion = str_replace('.zip', '', $_temp[1]);
       $liveAppUrl = LIVE_APP_DOMAIN . $appPackage;
@@ -889,6 +894,10 @@ function updateApp() {
           //Extract isd app package to local
           $isOk = unzipAppAndMerge($localAppPath);
           if($isOk) {
+            //Clean zip file
+            unlink($localAppPath);
+            //Remove empty Application folder
+            unlink($themePath . 'Applications/MAMP/htdocs/isd_api');
             //Update app version to database
             if(!$appVersion) {
               $appVersion = getVersion();
@@ -907,13 +916,13 @@ function updateApp() {
       } else {
         $response = array(
           'status' => 'error',
-          'message' => 'Server busy now! Can not download app package. Please try later!'
+          'message' => 'Something when wrong! Can not download app package!'
         );
       }
     } else {
       $response = array(
         'status' => 'error',
-        'message' => 'Server busy now! Can not get app package. Please try later!'
+        'message' => 'Something when wrong! Can not get app package!'
       );
     }
   } catch(Exception $e) {
@@ -929,7 +938,7 @@ function unzipAppAndMerge($zipPath) {
   if(file_exists($zipPath)) {
     $zip = new ZipArchive;
     if ($zip->open($zipPath) === TRUE) {
-      $themePath = getThemePath(); 
+      $themePath = getPluginPath(); 
       $zip->extractTo($themePath . '/');
       $zip->close();
       return true;
@@ -1865,7 +1874,7 @@ function copyAssetFiles($postId) {
   $baseDir = $wpUploadInfo['basedir'];
   $designFilesDir = $baseDir . '/isd/' . $postId;
   //ISD Theme Folder
-  $isdAppBaseDir = getThemePath() . '/isd_app/';
+  $isdAppBaseDir = getPluginPath() . '/isd_app/';
   foreach($scripts as $file) {
     $temp = explode('/', $file);
     file_force_contents($designFilesDir . '/isd_app/js/' . end($temp), file_get_contents($isdAppBaseDir . $file));
