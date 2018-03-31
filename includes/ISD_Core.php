@@ -897,7 +897,9 @@ function updateApp() {
             //Clean zip file
             unlink($localAppPath);
             //Remove empty Application folder
-            rmdir($themePath . 'Applications');
+            if(file_exists($themePath . 'Applications')) {
+              rmdir($themePath . 'Applications');
+            }
             //Update app version to database
             if(!$appVersion) {
               $appVersion = getVersion();
