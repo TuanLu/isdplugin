@@ -111,6 +111,8 @@ $customFontInfor = getCustomFonts($postId);
     <input type="hidden" value="<?php echo admin_url( "admin-ajax.php" ) ?>" id="isd_auth_ajax" />
     <input type="hidden" id="isd_base_img_url" value="<?php echo get_template_directory_uri() ?>/isd_app" />
     <input type="hidden" id="isd_platform" value="wordpress" />
+    <input type="hidden" id="isd_blog_url" value="<?php echo get_bloginfo('url'); ?>" />
+    <input type="hidden" id="isd_post_id" value="<?php echo $postId ?>" />
     <div id="isd_app" class=""></div>
     <input type="hidden" id="isd_import_json" value="<?php echo htmlentities($design_value, ENT_COMPAT,'UTF-8') ?>" />
     <?php if($customFontInfor['fonts'] != '') : ?>
@@ -120,18 +122,6 @@ $customFontInfor = getCustomFonts($postId);
     <script src="<?php echo $defaultAssetPath ?>/js/form.min.js"></script>
     <?php echo getExternalScript($externalFiles) ?>
     <script src="<?php echo $defaultAssetPath ?>/js/ishopdesign.viewonly.min.js"></script>
-    <?php if(defined('ISD_LANDING')) : ?>
-    <!-- Facebook Share -->
-    <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11&appId=1450685351843309';
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
-    <div class="fb-like" style="position:fixed;bottom: 5px; right: 5px;" data-href="<?php echo get_permalink() ?>" data-layout="button" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
-    <?php endif; ?>
     <!--Debug Section-->
     <?php if(isset($_GET['debug'])) : ?>
     <div type="hidden" id="debug_result">Debug Result Will Show Here</div>
