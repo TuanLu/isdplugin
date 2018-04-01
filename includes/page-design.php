@@ -159,7 +159,7 @@ $customFontInfor = getCustomFonts($postId);
     <?php endif; ?>
     <input type="hidden" id="isd_base_dir" value="<?php echo get_template_directory() ?>" />
     <input type="hidden" id="isd_platform" value="wordpress" />
-    <input type="hidden" id="isd_base_url" value="<?php echo get_template_directory_uri() ?>/isd_app/" />
+    <input type="hidden" id="isd_base_url" value="<?php echo $baseAssetPath ?>/" />
     <input type="hidden" id="isd_blog_url" value="<?php echo get_bloginfo('url'); ?>" />
     <input type="hidden" id="isd_preview_url" value="<?php echo $previewUrl ?>"/>
     <input type="hidden" value="<?php echo admin_url( "admin-ajax.php" ) ?>" id="isd_auth_ajax" />
